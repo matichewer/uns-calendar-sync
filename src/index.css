@@ -44,9 +44,9 @@
     --cat-academico: 217 91% 60%;
     --cat-academico-bg: 217 91% 96%;
     --cat-academico-text: 217 91% 35%;
-    --cat-clases: 217 91% 60%;
-    --cat-clases-bg: 217 91% 96%;
-    --cat-clases-text: 217 91% 35%;
+    --cat-clases: 145 60% 45%;
+    --cat-clases-bg: 145 60% 96%;
+    --cat-clases-text: 145 60% 30%;
 
     --cat-administrativo: 271 81% 56%;
     --cat-administrativo-bg: 271 81% 96%;
@@ -64,9 +64,9 @@
     --cat-otro-bg: 215 16% 95%;
     --cat-otro-text: 215 16% 30%;
     /* New categories */
-    --cat-nolaborable: 200 75% 45%;
-    --cat-nolaborable-bg: 200 75% 96%;
-    --cat-nolaborable-text: 200 75% 30%;
+    --cat-nolaborable: 330 85% 65%;
+    --cat-nolaborable-bg: 330 85% 96%;
+    --cat-nolaborable-text: 330 85% 36%;
     --cat-general: 215 16% 47%;
     --cat-general-bg: 215 16% 95%;
     --cat-general-text: 215 16% 30%;
