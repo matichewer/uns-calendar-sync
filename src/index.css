@@ -60,6 +60,13 @@
     --cat-otro: 215 16% 47%;
     --cat-otro-bg: 215 16% 95%;
     --cat-otro-text: 215 16% 30%;
+    /* New categories */
+    --cat-nolaborable: 200 75% 45%;
+    --cat-nolaborable-bg: 200 75% 96%;
+    --cat-nolaborable-text: 200 75% 30%;
+    --cat-general: 215 16% 47%;
+    --cat-general-bg: 215 16% 95%;
+    --cat-general-text: 215 16% 30%;
 
     /* Selected row */
     --selected-row: 217 91% 97%;
@@ -131,6 +138,14 @@
   background-color: hsl(var(--cat-otro-bg));
   color: hsl(var(--cat-otro-text));
 }
+.badge-general {
+  background-color: hsl(var(--cat-general-bg));
+  color: hsl(var(--cat-general-text));
+}
+.badge-nolaborable {
+  background-color: hsl(var(--cat-nolaborable-bg));
+  color: hsl(var(--cat-nolaborable-text));
+}
 
 /* Filter pill active states */
 .pill-feriado { background-color: hsl(var(--cat-feriado)); color: white; }
@@ -139,3 +154,5 @@
 .pill-asueto { background-color: hsl(var(--cat-asueto)); color: white; }
 .pill-religioso { background-color: hsl(var(--cat-religioso)); color: white; }
 .pill-otro { background-color: hsl(var(--cat-otro)); color: white; }
+.pill-general { background-color: hsl(var(--cat-general)); color: white; }
+.pill-nolaborable { background-color: hsl(var(--cat-nolaborable)); color: white; }

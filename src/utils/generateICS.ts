@@ -10,11 +10,9 @@ function nextDay(dateStr: string): string {
 
 const CATEGORY_LABELS: Record<string, string> = {
   feriado: 'Feriado',
-  academico: 'Académico',
-  administrativo: 'Administrativo',
+  nolaborable: 'No laborable',
   asueto: 'Asueto',
-  religioso: 'Religioso',
-  otro: 'Otro',
+  general: 'General',
 };
 
 export function generateICS(events: CalendarEvent[]): string {

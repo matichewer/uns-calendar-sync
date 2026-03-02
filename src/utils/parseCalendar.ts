@@ -3,7 +3,7 @@ export type CalendarEvent = {
   date: string;          // YYYYMMDD
   dateFormatted: string;  // e.g. "lun 16 mar"
   title: string;
-  category: 'feriado' | 'academico' | 'administrativo' | 'asueto' | 'religioso' | 'otro';
+  category: 'feriado' | 'asueto' | 'nolaborable' | 'general';
 };
 
 const MONTH_MAP: Record<string, number> = {
@@ -16,13 +16,13 @@ const DAY_NAMES = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
 
 function detectCategory(text: string): CalendarEvent['category'] {
   const t = text.toUpperCase();
-  if (t.includes('FERIADO') || t.includes('NO LABORABLE')) return 'feriado';
+  if (t.includes('FERIADO')) return 'feriado';
+  // "No laborable" is a distinct category from feriado
+  if (t.includes('NO LABORABLE')) return 'nolaborable';
   if (t.includes('ASUETO')) return 'asueto';
-  const tLower = text.toLowerCase();
-  if (/judía|islámica|armenio|pésaj|rosh|kipur/i.test(text)) return 'religioso';
-  if (/clases|cuatrimestre|cursos|bienvenida|receso|muestra/i.test(text)) return 'academico';
-  if (/inscripción|solicitudes|período|finaliza|comienza/i.test(text)) return 'administrativo';
-  return 'otro';
+
+  // Merge all other types (académico, administrativo, religioso, otros) into 'general'
+  return 'general';
 }
 
 export function parseCalendarHTML(html: string): CalendarEvent[] {

@@ -11,11 +11,9 @@ interface CategoryFilterProps {
 const FILTERS: { key: Category; label: string }[] = [
   { key: 'todos', label: 'Todos' },
   { key: 'feriado', label: 'Feriados' },
-  { key: 'academico', label: 'Académicos' },
-  { key: 'administrativo', label: 'Administrativos' },
+  { key: 'nolaborable', label: 'No laborable' },
   { key: 'asueto', label: 'Asuetos' },
-  { key: 'religioso', label: 'Religiosos' },
-  { key: 'otro', label: 'Otros' },
+  { key: 'general', label: 'General' },
 ];
 
 export function CategoryFilter({ active, onChange, counts }: CategoryFilterProps) {

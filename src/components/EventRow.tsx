@@ -2,11 +2,9 @@ import { CalendarEvent } from '@/utils/parseCalendar';
 
 const CATEGORY_LABELS: Record<string, string> = {
   feriado: 'Feriado',
-  academico: 'Académico',
-  administrativo: 'Admin.',
+  nolaborable: 'No laborable',
   asueto: 'Asueto',
-  religioso: 'Religioso',
-  otro: 'Otro',
+  general: 'General',
 };
 
 interface EventRowProps {
