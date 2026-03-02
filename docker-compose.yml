@@ -9,7 +9,7 @@ services:
     environment:
       - NODE_ENV=production
     ports:
-      - "3002:3002"
+      - "3002:3001"
 
   frontend:
     build: .
