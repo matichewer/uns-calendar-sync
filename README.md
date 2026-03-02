@@ -13,47 +13,97 @@ Aplicación web para sincronizar el calendario académico de la Universidad Naci
 
 ICS (iCalendar) es un formato estándar para intercambiar datos de calendarios y eventos. Un archivo `.ics` contiene información como título del evento, fecha y hora, descripción y ubicación. La mayoría de aplicaciones de calendario soportan importar archivos `.ics` o suscribirse a calendarios que los generen.
 
-Beneficios de usar ICS:
-- Portabilidad: funciona con Google Calendar, Outlook, Apple Calendar y otras.
-- Offline: podés descargar el archivo y conservar una copia local.
+# UNS Calendar Sync
 
-## Ejemplo: importar en Google Calendar
+A small web application to sync the academic calendar from the Universidad Nacional del Sur (UNS) and export selected events as an iCalendar (ICS) file.
 
-1. Abrí Google Calendar en la web.
-2. En la parte izquierda, hacé click en el signo + junto a "Otros calendarios" y elegí "Importar".
-3. Subí el archivo `.ics` que descargaste y elegí el calendario donde importarlo.
-4. Confirmá y verás los eventos añadidos.
+## Features
 
-## Estructura del proyecto
+- Fetches events from the UNS calendar source.
+- Lets users select the events they want to include.
+- Generates and downloads an `.ics` file that can be imported into calendar apps (Google Calendar, Outlook, Apple Calendar, etc.).
 
-- `/` (raíz): aplicación frontend creada con Vite + React + TypeScript.
-- `/src`: código fuente de la interfaz.
-	- `main.tsx`, `App.tsx`: entrada principal y estructura de la app.
-	- `components/`: componentes UI (filtros, filas de evento, calendario, helpers y componentes reutilizables).
-	- `utils/`: funciones utilitarias, incluyendo `generateICS.ts` y `parseCalendar.ts` que se encargan de crear archivos ICS y parsear el calendario fuente.
-- `/api`: servidor proxy (Node) que consulta la web del calendario de la UNS y devuelve los datos necesarios al frontend.
-- `/public`: archivos estáticos servidos por la aplicación.
-- `/nginx`: configuración ejemplo para servir la app con Nginx (opcional, para despliegue en Docker/servidor).
+## What is an ICS file?
 
-## Desarrollo local
+ICS (iCalendar) is a standard format for exchanging calendar and event data. An `.ics` file contains event details like title, start/end time, description and location. Most calendar apps support importing `.ics` files or subscribing to calendar feeds.
 
-Comandos principales (desde la raíz del proyecto):
+Benefits:
+- Portability across calendar providers.
+- Ability to keep a local copy of selected events.
 
-```
-git clone https://github.com/matichewer/uns-calendar-sync/
+## Example: Importing into Google Calendar
+
+1. Open Google Calendar in your browser.
+2. On the left side, click the `+` next to "Other calendars" and choose "Import".
+3. Upload the `.ics` file you downloaded and select the target calendar.
+4. Confirm to add the events.
+
+## Project structure
+
+- `/` (root): Frontend application built with Vite + React + TypeScript.
+- `/src`: UI source code.
+  - `main.tsx`, `App.tsx`: app entry and layout.
+  - `components/`: UI components (filters, event rows, calendar, shared UI primitives).
+  - `utils/`: helpers including `generateICS.ts` and `parseCalendar.ts` for creating ICS files and parsing the source calendar.
+- `/api`: Node-based proxy server that fetches the UNS calendar and provides data to the frontend.
+- `/public`: static assets.
+- `/nginx`: example Nginx configuration for serving a production build (optional).
+
+## Local development
+
+Prerequisites:
+
+- Node.js (v18+ recommended) and npm.
+- Docker & Docker Compose (optional, see Docker section).
+
+Install dependencies and run the frontend + API in development mode (recommended for active development):
+
+```bash
+git clone https://github.com/matichewer/uns-calendar-sync.git
 cd uns-calendar-sync
 npm install
-npm run dev      # inicia Vite en modo desarrollo
-npm run build    # build de producción
-npm run preview  # sirve la build localmente
+# Start the frontend dev server (Vite)
+npm run dev
+# In a separate terminal, start the API (if needed)
+cd api
+npm install
+npm run dev
 ```
 
+The frontend dev server uses Vite and typically runs on `http://localhost:5173`. The local API (when run from `/api`) listens on its configured port and the frontend will use the proxy during development.
 
-## Contribuir
+## Local development with Docker
 
-Si querés mejorar la app, podés:
+This repository includes a `docker-compose.yml` that can build and run the API and frontend build pipeline. The `api` service is published to the host at port `3002` (maps to the container port `3001`). The frontend build stage outputs the static `dist` folder to the host via a bind mount.
 
-- Escribirme
-- Abrir un issue describiendo el cambio.
-- Enviar un pull request
+To build and run everything with Docker Compose (from the project root):
+
+```bash
+# Build containers and start services
+docker compose up --build
+
+# Stop and remove containers
+docker compose down
+```
+
+Notes:
+
+- After `docker compose up --build` completes, the API will be reachable at `http://localhost:3002`.
+- The frontend build artifacts will be placed into the repository `./dist` folder (the `frontend` service copies the built files into the host `./dist` volume). You can serve `./dist` with any static server (for example, use `npm run preview` locally or configure an Nginx container).
+- To run only a specific service, add the service name: `docker compose up --build api`.
+
+## Build for production
+
+```bash
+npm run build
+# Serve the built files (example):
+npm run preview
+```
+
+## Contributing
+
+- Open an issue describing the change you propose.
+- Fork the repository and submit a pull request.
+
+If you want help or have questions, open an issue and I will respond.
 
