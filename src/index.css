@@ -44,6 +44,9 @@
     --cat-academico: 217 91% 60%;
     --cat-academico-bg: 217 91% 96%;
     --cat-academico-text: 217 91% 35%;
+    --cat-clases: 217 91% 60%;
+    --cat-clases-bg: 217 91% 96%;
+    --cat-clases-text: 217 91% 35%;
 
     --cat-administrativo: 271 81% 56%;
     --cat-administrativo-bg: 271 81% 96%;
@@ -138,6 +141,10 @@
   background-color: hsl(var(--cat-otro-bg));
   color: hsl(var(--cat-otro-text));
 }
+.badge-clases {
+  background-color: hsl(var(--cat-clases-bg));
+  color: hsl(var(--cat-clases-text));
+}
 .badge-general {
   background-color: hsl(var(--cat-general-bg));
   color: hsl(var(--cat-general-text));
@@ -156,3 +163,4 @@
 .pill-otro { background-color: hsl(var(--cat-otro)); color: white; }
 .pill-general { background-color: hsl(var(--cat-general)); color: white; }
 .pill-nolaborable { background-color: hsl(var(--cat-nolaborable)); color: white; }
+.pill-clases { background-color: hsl(var(--cat-clases)); color: white; }

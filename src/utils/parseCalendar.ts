@@ -3,7 +3,7 @@ export type CalendarEvent = {
   date: string;          // YYYYMMDD
   dateFormatted: string;  // e.g. "lun 16 mar"
   title: string;
-  category: 'feriado' | 'asueto' | 'nolaborable' | 'general';
+  category: 'feriado' | 'asueto' | 'nolaborable' | 'clases' | 'general';
 };
 
 const MONTH_MAP: Record<string, number> = {
@@ -21,7 +21,13 @@ function detectCategory(text: string): CalendarEvent['category'] {
   if (t.includes('NO LABORABLE')) return 'nolaborable';
   if (t.includes('ASUETO')) return 'asueto';
 
-  // Merge all other types (académico, administrativo, religioso, otros) into 'general'
+  const tl = text.toLowerCase();
+  // Clases: inscripción a materias, cursos de verano, cursos intensivos, receso
+  if ((/inscrip/i.test(tl) && /mater/i.test(tl)) || /cursos? de verano/i.test(tl) || /cursos? intensiv/i.test(tl) || /receso/i.test(tl)) {
+    return 'clases';
+  }
+
+  // Everything else falls into 'general'
   return 'general';
 }
 

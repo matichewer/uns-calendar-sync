@@ -12,6 +12,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   feriado: 'Feriado',
   nolaborable: 'No laborable',
   asueto: 'Asueto',
+  clases: 'Clases',
   general: 'General',
 };
 

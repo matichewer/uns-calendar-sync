@@ -13,6 +13,7 @@ const FILTERS: { key: Category; label: string }[] = [
   { key: 'feriado', label: 'Feriados' },
   { key: 'nolaborable', label: 'No laborable' },
   { key: 'asueto', label: 'Asuetos' },
+  { key: 'clases', label: 'Clases' },
   { key: 'general', label: 'General' },
 ];
 
