@@ -94,5 +94,3 @@ npm run preview
 - Open an issue describing the change you propose.
 - Fork the repository and submit a pull request.
 
-If you want help or have questions, open an issue and I will respond.
-
