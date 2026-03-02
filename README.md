@@ -56,7 +56,7 @@ In a separate terminal, start the API
 ```bash
 cd api
 npm install
-npm run dev
+npm start
 ```
 
 The frontend dev server uses Vite and typically runs on `http://localhost:5173`. The local API (when run from `/api`) listens on its configured port and the frontend will use the proxy during development.
