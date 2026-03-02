@@ -8,7 +8,8 @@ function getInitialTheme(): Theme {
   if (typeof window === "undefined") return "light";
   const stored = localStorage.getItem(THEME_KEY);
   if (stored === "dark" || stored === "light") return stored;
-  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  // Default to light for new users; existing users are respected via localStorage
+  return "light";
 }
 
 export default function useTheme(): [Theme, () => void] {

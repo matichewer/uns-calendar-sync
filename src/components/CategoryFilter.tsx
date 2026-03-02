@@ -29,7 +29,7 @@ export function CategoryFilter({ active, onChange, counts }: CategoryFilterProps
             onClick={() => onChange(key)}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
               isActive && key === 'todos'
-                ? 'bg-foreground text-primary-foreground'
+                  ? 'bg-foreground text-primary-foreground dark:bg-primary dark:text-primary-foreground'
                 : isActive
                 ? pillClass
                 : 'bg-secondary text-muted-foreground hover:bg-accent'
