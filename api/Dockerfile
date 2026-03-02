@@ -8,7 +8,7 @@ RUN npm install --production
 
 COPY server.js ./
 
-EXPOSE 3001
+EXPOSE 3002
 
 USER node
 
