@@ -23,7 +23,7 @@ function detectCategory(text: string): CalendarEvent['category'] {
 
   const tl = text.toLowerCase();
   // Clases: inscripción a materias, cursos de verano, cursos intensivos, receso
-  if (\bclases?\b/i.test(text) || ((/inscrip/i.test(tl) && /mater/i.test(tl)) || /cursos? de verano/i.test(tl) || /cursos? intensiv/i.test(tl) || /receso/i.test(tl))) {
+  if (/\bclases?\b/i.test(text) || ((/inscrip/i.test(tl) && /mater/i.test(tl)) || /cursos? de verano/i.test(tl) || /cursos? intensiv/i.test(tl) || /receso/i.test(tl))) {
     return 'clases';
   }
 
