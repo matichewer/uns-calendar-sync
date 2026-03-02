@@ -85,9 +85,9 @@ const Index = () => {
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="text-center space-y-4">
-          <div className="w-8 h-8 border-3 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-muted-foreground text-sm">Cargando calendario de la UNS...</p>
+        <div className="loader-fade text-center space-y-4 p-6">
+          <div className="w-14 h-14 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto shadow-md opacity-95" />
+          <p className="text-muted-foreground text-lg font-medium opacity-90">Cargando calendario de la UNS...</p>
         </div>
       </div>
     );
