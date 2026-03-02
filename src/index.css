@@ -52,9 +52,9 @@
     --cat-administrativo-bg: 271 81% 96%;
     --cat-administrativo-text: 271 81% 35%;
 
-    --cat-asueto: 25 95% 53%;
-    --cat-asueto-bg: 25 95% 95%;
-    --cat-asueto-text: 25 95% 33%;
+    --cat-asueto: 205 90% 50%;
+    --cat-asueto-bg: 205 90% 96%;
+    --cat-asueto-text: 205 90% 28%;
 
     --cat-religioso: 173 80% 40%;
     --cat-religioso-bg: 173 80% 95%;
@@ -64,9 +64,9 @@
     --cat-otro-bg: 215 16% 95%;
     --cat-otro-text: 215 16% 30%;
     /* New categories */
-    --cat-nolaborable: 205 90% 50%;
-    --cat-nolaborable-bg: 205 90% 96%;
-    --cat-nolaborable-text: 205 90% 28%;
+    --cat-nolaborable: 25 95% 53%;
+    --cat-nolaborable-bg: 25 95% 95%;
+    --cat-nolaborable-text: 25 95% 33%;
     --cat-general: 215 16% 47%;
     --cat-general-bg: 215 16% 95%;
     --cat-general-text: 215 16% 30%;
