@@ -49,7 +49,11 @@ cd uns-calendar-sync
 npm install
 # Start the frontend dev server (Vite)
 npm run dev
-# In a separate terminal, start the API (if needed)
+```
+
+In a separate terminal, start the API
+
+```bash
 cd api
 npm install
 npm run dev
