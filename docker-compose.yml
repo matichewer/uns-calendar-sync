@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    image: uns-calendar-api:latest
+    container_name: uns-calendar-api
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3001:3001"
+
+  frontend:
+    build: .
+    image: uns-calendar-frontend:latest
+    container_name: uns-calendar-frontend
+    restart: "no"
+    depends_on:
+      - api
+    volumes:
+      - ./dist:/dist
+
+
+networks:
+  default:
+    name: uns-calendar-net
