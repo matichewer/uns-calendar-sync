@@ -1,20 +1,5 @@
 # UNS Calendar Sync
 
-Aplicación web para sincronizar el calendario académico de la Universidad Nacional del Sur (UNS).
-
-## Qué hace
-
-- Lee los eventos publicados en el calendario de la UNS.
-- Te permite marcar (seleccionar) los eventos que quieras incluir.
-- Genera y descarga un archivo en formato ICS con los eventos seleccionados.
-- Ese archivo ICS lo podés importar en cualquier aplicación de calendario (por ejemplo Google Calendar, Outlook, Apple Calendar, etc.).
-
-## ¿Qué es un archivo ICS?
-
-ICS (iCalendar) es un formato estándar para intercambiar datos de calendarios y eventos. Un archivo `.ics` contiene información como título del evento, fecha y hora, descripción y ubicación. La mayoría de aplicaciones de calendario soportan importar archivos `.ics` o suscribirse a calendarios que los generen.
-
-# UNS Calendar Sync
-
 A small web application to sync the academic calendar from the Universidad Nacional del Sur (UNS) and export selected events as an iCalendar (ICS) file.
 
 ## Features
