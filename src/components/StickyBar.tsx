@@ -11,7 +11,7 @@ export function StickyBar({ selectedCount, selectedEvents }: StickyBarProps) {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-border"
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-border glass-subtle"
       style={{
         backgroundColor: 'hsl(var(--sticky-bar))',
         boxShadow: 'var(--sticky-bar-shadow)',

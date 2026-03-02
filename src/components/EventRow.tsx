@@ -19,7 +19,9 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
     <button
       onClick={() => onToggle(event.id)}
       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-left group ${
-        selected ? 'bg-[hsl(var(--selected-row))]' : 'hover:bg-secondary/60'
+        selected
+          ? `bg-[hsl(var(--selected-row))] glass-strong`
+          : 'glass-subtle hover:bg-secondary/60'
       }`}
     >
       <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 transition-all ${

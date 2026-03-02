@@ -23,11 +23,12 @@ export function CategoryFilter({ active, onChange, counts }: CategoryFilterProps
       {FILTERS.map(({ key, label }) => {
         const isActive = active === key;
         const pillClass = key !== 'todos' && isActive ? `pill-${key}` : '';
+        const baseGlass = isActive ? 'glass' : 'glass-subtle';
         return (
           <button
             key={key}
             onClick={() => onChange(key)}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+            className={`${baseGlass} px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
               isActive && key === 'todos'
                 ? 'bg-foreground text-primary-foreground dark:bg-muted dark:text-foreground'
                 : isActive

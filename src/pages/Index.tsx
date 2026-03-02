@@ -144,7 +144,7 @@ const Index = () => {
         </div>
 
         {/* Main card */}
-        <div className="bg-card rounded-xl shadow-sm border border-border p-5">
+        <div className="glass glass-strong rounded-xl shadow-sm border border-border p-5">
           {/* Category filters */}
           <div className="mb-4">
             <CategoryFilter
