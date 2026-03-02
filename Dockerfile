@@ -1,7 +1,8 @@
 ## Multi-stage Dockerfile: build Vite app and produce static `dist`
 FROM node:20-alpine AS builder
 WORKDIR /app
-ENV NODE_ENV=production
+# Ensure devDependencies (vite) are installed for the build step
+# Do NOT set NODE_ENV=production here because that would omit devDependencies
 
 # Install dependencies
 COPY package.json package-lock.json* ./
