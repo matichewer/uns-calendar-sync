@@ -117,10 +117,26 @@ const Index = () => {
         {/* Header */}
         <div className="mb-8 glass-subtle rounded-2xl p-3 sm:p-6 shadow-lg border-2 border-border/30 dark:border-border/50">
           <div className="flex items-start justify-between">
-            <h1 className="text-3xl font-bold text-foreground flex items-center gap-3">
-              <img src="/logo-uns.webp" alt="Universidad Nacional del Sur" className="w-10 h-10 md:w-12 md:h-12 lg:w-20 lg:h-20 object-contain rounded" />
-              <span>Calendario UNS</span>
-            </h1>
+            <div className="grid grid-cols-[auto_1fr] gap-4 items-center md:items-start">
+              <img src="/logo-uns.webp" alt="Universidad Nacional del Sur" className="w-14 h-14 md:w-16 md:h-16 lg:w-28 lg:h-28 object-contain rounded row-span-1 md:row-span-3" />
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground col-start-2 self-center lg:self-end lg:translate-y-4">Calendario UNS</h1>
+              <div className="col-span-2 md:col-span-1 md:col-start-2 mt-3 md:mt-4 flex flex-col gap-1">
+                <p className="text-muted-foreground text-sm leading-tight m-0">
+                  Seleccioná los eventos y exportalos a tu calendario favorito
+                </p>
+                <p className="text-xs text-muted-foreground/60 leading-tight m-0">
+                  Datos en tiempo real desde{' '}
+                  <a
+                    href="https://www.uns.edu.ar/alumnos/calendario-academico"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground/80 hover:underline"
+                  >
+                    el calendario académico de la UNS
+                  </a>
+                </p>
+              </div>
+            </div>
             <div className="inline-flex items-center gap-2">
               <a
                 href="https://github.com/matichewer/uns-calendar-sync"
@@ -137,20 +153,6 @@ const Index = () => {
               <ThemeToggle />
             </div>
           </div>
-          <p className="text-muted-foreground mt-1 text-sm">
-            Seleccioná los eventos y exportalos a tu calendario favorito
-          </p>
-          <p className="text-xs text-muted-foreground/60 mt-1">
-            Datos en tiempo real desde{' '}
-            <a
-              href="https://www.uns.edu.ar/alumnos/calendario-academico"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground/80 hover:underline"
-            >
-              el calendario académico de la UNS
-            </a>
-          </p>
         </div>
 
         {/* Main card */}
