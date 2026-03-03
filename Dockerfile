@@ -14,7 +14,8 @@ WORKDIR /app
 
 # Copy package files and install as root first, then switch to the non-root user
 COPY package.json package-lock.json* ./
-RUN chown -R builder:builder /app
+# Use numeric UID:GID for chown to avoid user name resolution issues during build
+RUN chown -R ${BUILD_UID}:${BUILD_GID} /app || true
 
 USER builder
 ENV NPM_CONFIG_UPDATE_NOTIFIER=false
