@@ -113,9 +113,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen pb-24">
-      <div className="max-w-[800px] mx-auto px-4 py-8">
+      <div className="max-w-[800px] mx-auto px-2 sm:px-4 py-8">
         {/* Header */}
-        <div className="mb-8 glass-subtle rounded-2xl p-6 shadow-lg border-2 border-border/30">
+        <div className="mb-8 glass-subtle rounded-2xl p-3 sm:p-6 shadow-lg border-2 border-border/30">
           <div className="flex items-start justify-between">
             <h1 className="text-3xl font-bold text-foreground flex items-center gap-3">
               📅 UNS Calendario
@@ -153,7 +153,7 @@ const Index = () => {
         </div>
 
         {/* Main card */}
-        <div className="glass-strong rounded-2xl shadow-2xl border-2 border-border/40 p-6">
+        <div className="glass-strong rounded-2xl shadow-2xl border-2 border-border/40 p-3 sm:p-6">
           {/* Category filters */}
           <div className="mb-4">
             <CategoryFilter
@@ -164,21 +164,21 @@ const Index = () => {
           </div>
 
           {/* Global controls */}
-          <div className="flex gap-3 mb-6 p-3 glass rounded-xl border border-border/30">
+          <div className="flex gap-2 sm:gap-3 mb-6 p-2 sm:p-3 glass rounded-xl border border-border/30 text-xs sm:text-sm">
             <button
               onClick={selectAllVisible}
-              className="text-sm font-semibold text-primary hover:underline"
+              className="font-semibold text-primary hover:underline"
             >
               Seleccionar todos
             </button>
-            <span className="text-muted-foreground text-sm">·</span>
+            <span className="text-muted-foreground">·</span>
             <button
               onClick={deselectAllVisible}
-              className="text-sm font-semibold text-muted-foreground hover:underline"
+              className="font-semibold text-muted-foreground hover:underline"
             >
               Deseleccionar todos
             </button>
-            <span className="ml-auto text-sm font-semibold text-foreground">
+            <span className="ml-auto font-semibold text-foreground whitespace-nowrap">
               {filteredEvents.length} eventos
             </span>
           </div>

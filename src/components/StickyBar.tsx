@@ -16,15 +16,20 @@ export function StickyBar({ selectedCount, selectedEvents }: StickyBarProps) {
         boxShadow: '0 -8px 32px rgba(0,0,0,0.12), 0 -2px 8px rgba(0,0,0,0.08)',
       }}
     >
-      <div className="max-w-[800px] mx-auto px-4 py-4 flex items-center justify-between">
-        <span className="text-sm text-muted-foreground">
-          <span className="font-bold text-lg text-foreground">{selectedCount}</span>{' '}
-          {selectedCount === 1 ? 'evento seleccionado' : 'eventos seleccionados'}
+      <div className="max-w-[800px] mx-auto px-2 sm:px-4 py-3 sm:py-4 flex items-center justify-between gap-3">
+        <span className="text-xs sm:text-sm text-muted-foreground">
+          <span className="font-bold text-base sm:text-lg text-foreground">{selectedCount}</span>{' '}
+          <span className="hidden sm:inline">
+            {selectedCount === 1 ? 'evento seleccionado' : 'eventos seleccionados'}
+          </span>
+          <span className="sm:hidden">
+            {selectedCount === 1 ? 'evento' : 'eventos'}
+          </span>
         </span>
         <button
           onClick={() => !disabled && downloadICS(selectedEvents)}
           disabled={disabled}
-          className={`px-6 py-3 rounded-xl text-sm font-bold transition-all shadow-lg ${
+          className={`px-3 sm:px-6 py-2 sm:py-3 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-lg ${
             disabled
               ? 'bg-muted text-muted-foreground cursor-not-allowed opacity-60'
               : 'bg-primary text-primary-foreground hover:opacity-90 active:scale-[0.97] hover:shadow-xl hover:shadow-primary/20'

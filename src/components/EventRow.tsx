@@ -8,6 +8,14 @@ const CATEGORY_LABELS: Record<string, string> = {
   general: 'General',
 };
 
+const CATEGORY_LABELS_SHORT: Record<string, string> = {
+  feriado: 'Feriado',
+  nolaborable: 'No lab.',
+  asueto: 'Asueto',
+  clases: 'Clases',
+  general: 'General',
+};
+
 interface EventRowProps {
   event: CalendarEvent;
   selected: boolean;
@@ -19,7 +27,7 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
   return (
     <button
       onClick={() => onToggle(event.id)}
-      className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 text-left group mb-2.5 
+      className={`w-full flex items-start sm:items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-3 rounded-xl transition-all duration-200 text-left group mb-2.5 
         border-2 backdrop-blur-md
         ${
         selected
@@ -33,13 +41,13 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
              hover:scale-[1.005] active:scale-[0.995]`
       }`} 
     >
-      <div className={`w-6 h-6 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all duration-200 shadow-sm ${
+      <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all duration-200 shadow-sm ${
         selected
           ? 'bg-primary border-primary shadow-primary/30'
           : 'border-foreground/40 bg-background/50 dark:border-foreground/50 group-hover:border-foreground/70 group-hover:bg-background/80'
       }`}>
         {selected && (
-          <svg width="14" height="14" viewBox="0 0 12 12" fill="none">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="sm:w-[14px] sm:h-[14px]">
             <path d="M2.5 6L5 8.5L9.5 4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         )}
@@ -50,17 +58,23 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
         {event.dateFormatted}
       </span>
 
-      <div className="sm:hidden w-14 flex-shrink-0 font-mono text-muted-foreground text-center leading-tight">
-        <span className="block text-xs font-medium">{dateParts[0]}</span>
-        <span className="block text-base font-bold">{dateParts[1]}</span>
-        <span className="block text-xs font-medium">{dateParts[2]}</span>
+      <div className="sm:hidden w-11 flex-shrink-0 font-mono text-muted-foreground text-center leading-tight">
+        <span className="block text-[10px] font-medium">{dateParts[0]}</span>
+        <span className="block text-sm font-bold">{dateParts[1]}</span>
+        <span className="block text-[10px] font-medium">{dateParts[2]}</span>
       </div>
 
-      <span className="text-sm font-medium text-foreground flex-1 leading-relaxed">
+      <span className="text-sm font-medium text-foreground flex-1 leading-relaxed min-w-0 break-words">
         {event.title}
       </span>
 
-      <span className={`badge-${event.category} text-xs font-semibold px-3 py-1.5 rounded-lg flex-shrink-0 shadow-sm border border-black/10 dark:border-white/10`}>
+      {/* Mobile: short labels */}
+      <span className={`badge-${event.category} sm:hidden text-[10px] font-semibold px-1.5 py-1 rounded-lg flex-shrink-0 shadow-sm border border-black/10 dark:border-white/10 whitespace-nowrap`}>
+        {CATEGORY_LABELS_SHORT[event.category]}
+      </span>
+
+      {/* Desktop: full labels */}
+      <span className={`badge-${event.category} hidden sm:inline-block text-xs font-semibold px-3 py-1.5 rounded-lg flex-shrink-0 shadow-sm border border-black/10 dark:border-white/10 whitespace-nowrap`}>
         {CATEGORY_LABELS[event.category]}
       </span>
     </button>
