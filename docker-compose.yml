@@ -12,7 +12,12 @@ services:
       - "3002:3001"
 
   frontend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILD_UID: ${UID:-1000}
+        BUILD_GID: ${GID:-1000}
     image: uns-calendar-frontend:latest
     container_name: uns-calendar-frontend
     restart: "no"
