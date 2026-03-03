@@ -9,10 +9,11 @@ WORKDIR /app
 # Ensure devDependencies (vite) are installed for the build step
 # Do NOT set NODE_ENV=production here because that would omit devDependencies
 
-# Copy package files and install dependencies as root
-COPY package.json package-lock.json* ./
+# Copy package file only and install dependencies for the target architecture
+# Do NOT copy package-lock.json so optional native deps are resolved for the build arch
+COPY package.json ./
 ENV NPM_CONFIG_UPDATE_NOTIFIER=false
-RUN npm ci --prefer-offline --no-audit --no-fund
+RUN npm install --prefer-offline --no-audit --no-fund
 
 # Create host-matching user/group and copy sources owned by that UID:GID
 RUN groupadd -g ${BUILD_GID} builder || true \
