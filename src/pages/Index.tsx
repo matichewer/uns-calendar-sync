@@ -118,7 +118,7 @@ const Index = () => {
         <div className="mb-8 glass-subtle rounded-2xl p-3 sm:p-6 shadow-lg border-2 border-border/30 dark:border-border/50">
           <div className="flex items-start justify-between">
             <h1 className="text-3xl font-bold text-foreground flex items-center gap-3">
-              📅 UNS Calendario
+              📅 Calendario UNS
             </h1>
             <div className="inline-flex items-center gap-2">
               <a

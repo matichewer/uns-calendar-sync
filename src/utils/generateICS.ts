@@ -20,10 +20,10 @@ export function generateICS(events: CalendarEvent[]): string {
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//UNS Calendario//ES',
+    'PRODID:-//Calendario UNS//ES',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
-    'X-WR-CALNAME:UNS Académico',
+    'X-WR-CALNAME:Calendario UNS',
     'X-WR-TIMEZONE:America/Argentina/Buenos_Aires',
   ];
 
