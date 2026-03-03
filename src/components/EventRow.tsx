@@ -15,6 +15,7 @@ interface EventRowProps {
 }
 
 export function EventRow({ event, selected, onToggle }: EventRowProps) {
+  const dateParts = event.dateFormatted.split(' ');
   return (
     <button
       onClick={() => onToggle(event.id)}
@@ -36,9 +37,16 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
         )}
       </div>
 
-      <span className="text-sm text-muted-foreground w-24 flex-shrink-0 font-mono">
+      {/* Desktop: full date text; Mobile: stacked date */}
+      <span className="text-sm text-muted-foreground w-24 flex-shrink-0 font-mono hidden sm:inline">
         {event.dateFormatted}
       </span>
+
+      <div className="sm:hidden w-12 flex-shrink-0 font-mono text-muted-foreground text-center leading-tight">
+        <span className="block text-xs">{dateParts[0]}</span>
+        <span className="block text-sm font-medium">{dateParts[1]}</span>
+        <span className="block text-xs">{dateParts[2]}</span>
+      </div>
 
       <span className="text-sm text-foreground flex-1 leading-snug">
         {event.title}
