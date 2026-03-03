@@ -137,10 +137,18 @@ const Index = () => {
             </div>
           </div>
           <p className="text-muted-foreground mt-1 text-sm">
-            Seleccioná los eventos y exportalos a tu Google Calendar
+            Seleccioná los eventos y exportalos a tu calendario favorito
           </p>
           <p className="text-xs text-muted-foreground/60 mt-1">
-            Datos en tiempo real desde uns.edu.ar
+            Datos en tiempo real desde{' '}
+            <a
+              href="https://www.uns.edu.ar/alumnos/calendario-academico"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground/80 hover:underline"
+            >
+              el calendario académico de la UNS
+            </a>
           </p>
         </div>
 

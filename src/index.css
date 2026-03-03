@@ -38,38 +38,38 @@
 
     /* Category colors */
     --cat-feriado: 0 84% 60%;
-    --cat-feriado-bg: 0 84% 96%;
-    --cat-feriado-text: 0 84% 40%;
+    --cat-feriado-bg: 0 84% 88%;
+    --cat-feriado-text: 0 84% 30%;
 
     --cat-academico: 217 91% 60%;
-    --cat-academico-bg: 217 91% 96%;
-    --cat-academico-text: 217 91% 35%;
+    --cat-academico-bg: 217 91% 88%;
+    --cat-academico-text: 217 91% 28%;
     --cat-clases: 145 60% 45%;
-    --cat-clases-bg: 145 60% 96%;
-    --cat-clases-text: 145 60% 30%;
+    --cat-clases-bg: 145 60% 88%;
+    --cat-clases-text: 145 60% 24%;
 
     --cat-administrativo: 271 81% 56%;
-    --cat-administrativo-bg: 271 81% 96%;
-    --cat-administrativo-text: 271 81% 35%;
+    --cat-administrativo-bg: 271 81% 88%;
+    --cat-administrativo-text: 271 81% 28%;
 
     --cat-asueto: 205 90% 50%;
-    --cat-asueto-bg: 205 90% 96%;
-    --cat-asueto-text: 205 90% 28%;
+    --cat-asueto-bg: 205 90% 88%;
+    --cat-asueto-text: 205 90% 22%;
 
     --cat-religioso: 173 80% 40%;
-    --cat-religioso-bg: 173 80% 95%;
-    --cat-religioso-text: 173 80% 25%;
+    --cat-religioso-bg: 173 80% 88%;
+    --cat-religioso-text: 173 80% 20%;
 
     --cat-otro: 215 16% 47%;
-    --cat-otro-bg: 215 16% 95%;
-    --cat-otro-text: 215 16% 30%;
+    --cat-otro-bg: 215 16% 88%;
+    --cat-otro-text: 215 16% 24%;
     /* New categories */
     --cat-nolaborable: 25 95% 53%;
-    --cat-nolaborable-bg: 25 95% 95%;
-    --cat-nolaborable-text: 25 95% 33%;
+    --cat-nolaborable-bg: 25 95% 88%;
+    --cat-nolaborable-text: 25 95% 26%;
     --cat-general: 215 16% 47%;
-    --cat-general-bg: 215 16% 95%;
-    --cat-general-text: 215 16% 30%;
+    --cat-general-bg: 215 16% 88%;
+    --cat-general-text: 215 16% 24%;
 
     /* Selected row */
     --selected-row: 217 91% 97%;
