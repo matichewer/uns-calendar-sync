@@ -86,9 +86,9 @@ const Index = () => {
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="loader-fade text-center space-y-4 p-6">
-          <div className="w-14 h-14 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto shadow-md opacity-95" />
-          <p className="text-muted-foreground text-lg font-medium opacity-90">Cargando calendario de la UNS...</p>
+        <div className="loader-fade text-center space-y-5 p-8 glass-strong rounded-2xl shadow-2xl">
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto shadow-lg" />
+          <p className="text-foreground text-xl font-semibold">Cargando calendario de la UNS...</p>
         </div>
       </div>
     );
@@ -97,12 +97,12 @@ const Index = () => {
   if (error) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="text-center space-y-4">
-          <p className="text-foreground font-medium">No se pudo cargar el calendario.</p>
-          <p className="text-muted-foreground text-sm">Intentá de nuevo.</p>
+        <div className="text-center space-y-5 p-8 glass-strong rounded-2xl shadow-2xl">
+          <p className="text-foreground font-semibold text-xl">No se pudo cargar el calendario.</p>
+          <p className="text-muted-foreground">Intentá de nuevo.</p>
           <button
             onClick={fetchCalendar}
-            className="px-5 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-all"
+            className="px-6 py-3 bg-primary text-primary-foreground rounded-xl text-sm font-semibold hover:opacity-90 transition-all shadow-lg hover:shadow-xl"
           >
             Reintentar
           </button>
@@ -115,9 +115,9 @@ const Index = () => {
     <div className="min-h-screen pb-24">
       <div className="max-w-[800px] mx-auto px-4 py-8">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-8 glass-subtle rounded-2xl p-6 shadow-lg border-2 border-border/30">
           <div className="flex items-start justify-between">
-            <h1 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <h1 className="text-3xl font-bold text-foreground flex items-center gap-3">
               📅 UNS Calendario
             </h1>
             <div className="inline-flex items-center gap-2">
@@ -153,7 +153,7 @@ const Index = () => {
         </div>
 
         {/* Main card */}
-        <div className="glass glass-strong rounded-xl shadow-sm border border-border p-5">
+        <div className="glass-strong rounded-2xl shadow-2xl border-2 border-border/40 p-6">
           {/* Category filters */}
           <div className="mb-4">
             <CategoryFilter
@@ -164,21 +164,21 @@ const Index = () => {
           </div>
 
           {/* Global controls */}
-          <div className="flex gap-3 mb-5">
+          <div className="flex gap-3 mb-6 p-3 glass rounded-xl border border-border/30">
             <button
               onClick={selectAllVisible}
-              className="text-xs font-medium text-primary hover:underline"
+              className="text-sm font-semibold text-primary hover:underline"
             >
               Seleccionar todos
             </button>
-            <span className="text-muted-foreground text-xs">·</span>
+            <span className="text-muted-foreground text-sm">·</span>
             <button
               onClick={deselectAllVisible}
-              className="text-xs font-medium text-muted-foreground hover:underline"
+              className="text-sm font-semibold text-muted-foreground hover:underline"
             >
               Deseleccionar todos
             </button>
-            <span className="ml-auto text-xs text-muted-foreground">
+            <span className="ml-auto text-sm font-semibold text-foreground">
               {filteredEvents.length} eventos
             </span>
           </div>

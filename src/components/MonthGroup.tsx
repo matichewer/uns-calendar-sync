@@ -14,14 +14,15 @@ export function MonthGroup({ month, events, selectedIds, onToggle, onSelectAll, 
   if (events.length === 0) return null;
 
   return (
-    <div className="mb-6">
-      <div className="flex items-center mb-2 px-1">
-        <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+    <div className="mb-8">
+      <div className="flex items-center mb-3 px-2">
+        <h3 className="text-sm font-bold uppercase tracking-widest text-foreground/90 
+                       bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
           {getMonthName(month)}
         </h3>
       </div>
-      <div className="border-t border-border mb-2" />
-      <div className="space-y-0.5">
+      <div className="border-t-2 border-gradient-to-r from-border via-primary/30 to-border mb-3 shadow-sm" />
+      <div className="space-y-0">
         {events.map(event => (
           <EventRow
             key={event.id}
