@@ -29,10 +29,10 @@ export function CategoryFilter({ active, onChange, counts }: CategoryFilterProps
             onClick={() => onChange(key)}
             className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 border-2 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 ${
               isActive && key === 'todos'
-                ? 'bg-foreground text-primary-foreground dark:bg-muted dark:text-foreground border-foreground/50'
+                ? 'bg-foreground text-primary-foreground dark:bg-muted dark:text-foreground border-foreground/50 dark:shadow-xl'
                 : isActive
-                ? `${pillClass} border-current/40`
-                : 'glass bg-secondary/50 text-muted-foreground hover:bg-accent hover:text-foreground border-border/30 hover:border-border/60'
+                ? `${pillClass} border-current/40 dark:border-current/50 dark:shadow-xl`
+                : 'glass bg-secondary/50 text-muted-foreground hover:bg-accent hover:text-foreground border-border/30 dark:border-border/50 hover:border-border/60'
             }`}
           >
             {label}

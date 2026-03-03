@@ -11,10 +11,9 @@ export function StickyBar({ selectedCount, selectedEvents }: StickyBarProps) {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 border-t-2 border-border/40 glass-strong backdrop-blur-2xl"
-      style={{
-        boxShadow: '0 -8px 32px rgba(0,0,0,0.12), 0 -2px 8px rgba(0,0,0,0.08)',
-      }}
+      className="fixed bottom-0 left-0 right-0 z-50 border-t-2 border-border/40 dark:border-border/60 glass-strong backdrop-blur-2xl
+                 shadow-[0_-8px_32px_rgba(0,0,0,0.12),0_-2px_8px_rgba(0,0,0,0.08)]
+                 dark:shadow-[0_-12px_48px_rgba(0,0,0,0.50),0_-4px_16px_rgba(0,0,0,0.40)]"
     >
       <div className="max-w-[800px] mx-auto px-2 sm:px-4 py-3 sm:py-4 flex items-center justify-between gap-3">
         <span className="text-xs sm:text-sm text-muted-foreground">
