@@ -19,11 +19,11 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
   return (
     <button
       onClick={() => onToggle(event.id)}
-      className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-left group ${
+      className={`w-full flex items-center gap-3 px-3 py-2 rounded-full transition-colors text-left group mb-3 overflow-hidden ${
         selected
-          ? `bg-[hsl(var(--selected-row))] glass-strong`
-          : 'glass-subtle hover:bg-secondary/60'
-      }`}
+          ? `bg-[hsl(var(--selected-row))] glass-strong ring-1 ring-border/20 shadow-sm bg-gradient-to-b from-white/6 to-white/2 dark:from-black/20 dark:to-black/10`
+          : 'bg-white/6 dark:bg-black/20 hover:bg-secondary/60 shadow-sm ring-1 ring-border/20 bg-gradient-to-b from-white/4 to-white/2 dark:from-black/18 dark:to-black/12'
+      }`} 
     >
       <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 transition-all ${
         selected
@@ -38,7 +38,7 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
       </div>
 
       {/* Desktop: full date text; Mobile: stacked date */}
-      <span className="text-sm text-muted-foreground w-24 flex-shrink-0 font-mono hidden sm:inline">
+      <span className="text-sm text-muted-foreground w-20 sm:w-24 flex-shrink-0 font-mono hidden sm:inline">
         {event.dateFormatted}
       </span>
 
