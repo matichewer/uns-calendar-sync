@@ -31,6 +31,8 @@ RUN npm run build
 FROM node:20-bullseye-slim AS exporter
 WORKDIR /out
 COPY --from=builder /app/dist ./dist
+# Ensure static files from `public/` are also available in the exported `dist`
+COPY --from=builder /app/public/. ./dist/
 
 # When this container runs with a host bind mount at /dist, the CMD will copy
 # the built files into the mounted folder so the host (nginx) can serve them.
