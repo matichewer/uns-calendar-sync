@@ -20,6 +20,9 @@ RUN groupadd -g ${BUILD_GID} builder || true \
  && useradd -m -u ${BUILD_UID} -g ${BUILD_GID} builder || true
 COPY --chown=${BUILD_UID}:${BUILD_GID} . .
 
+# Ensure the build user owns all files (including node_modules created earlier)
+RUN chown -R ${BUILD_UID}:${BUILD_GID} /app || true
+
 # Run the build as the non-root user (by numeric UID:GID)
 USER ${BUILD_UID}:${BUILD_GID}
 RUN npm run build
