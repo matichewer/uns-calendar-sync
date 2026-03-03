@@ -28,7 +28,7 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
       <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 transition-all ${
         selected
           ? 'bg-primary border-primary'
-          : 'border-border group-hover:border-muted-foreground'
+          : 'border-black/50 dark:border-white/60 group-hover:border-muted-foreground dark:group-hover:border-white'
       }`}>
         {selected && (
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
