@@ -113,7 +113,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen pb-24">
-      <div className="max-w-[800px] mx-auto px-2 sm:px-4 py-8">
+      <div className="max-w-[800px] md:max-w-[1000px] lg:max-w-[1100px] mx-auto px-2 sm:px-4 py-8">
         {/* Header */}
         <div className="mb-8 glass-subtle rounded-2xl p-3 sm:p-6 shadow-lg border-2 border-border/30 dark:border-border/50">
           <div className="flex items-start justify-between">

@@ -15,7 +15,7 @@ export function StickyBar({ selectedCount, selectedEvents }: StickyBarProps) {
                  shadow-[0_-8px_32px_rgba(0,0,0,0.12),0_-2px_8px_rgba(0,0,0,0.08)]
                  dark:shadow-[0_-12px_48px_rgba(0,0,0,0.50),0_-4px_16px_rgba(0,0,0,0.40)]"
     >
-      <div className="max-w-[800px] mx-auto px-2 sm:px-4 py-3 sm:py-4 flex items-center justify-between gap-3">
+      <div className="max-w-[800px] md:max-w-[1000px] lg:max-w-[1100px] mx-auto px-2 sm:px-4 py-3 sm:py-4 flex items-center justify-between gap-3">
         <span className="text-xs sm:text-sm text-muted-foreground">
           <span className="font-bold text-base sm:text-lg text-foreground">{selectedCount}</span>{' '}
           <span className="hidden sm:inline">
