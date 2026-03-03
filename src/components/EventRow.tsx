@@ -41,7 +41,7 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
              hover:scale-[1.005] active:scale-[0.995]`
       }`} 
     >
-      <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all duration-200 shadow-sm ${
+      <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all duration-200 shadow-sm mt-0.5 sm:mt-0 ${
         selected
           ? 'bg-primary border-primary shadow-primary/30'
           : 'border-foreground/40 bg-background/50 dark:border-foreground/50 group-hover:border-foreground/70 group-hover:bg-background/80'
@@ -58,7 +58,7 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
         {event.dateFormatted}
       </span>
 
-      <div className="sm:hidden w-11 flex-shrink-0 font-mono text-muted-foreground text-center leading-tight">
+      <div className="sm:hidden w-11 flex-shrink-0 font-mono text-muted-foreground text-center leading-tight pt-0.5">
         <span className="block text-[10px] font-medium">{dateParts[0]}</span>
         <span className="block text-sm font-bold">{dateParts[1]}</span>
         <span className="block text-[10px] font-medium">{dateParts[2]}</span>
@@ -69,7 +69,7 @@ export function EventRow({ event, selected, onToggle }: EventRowProps) {
       </span>
 
       {/* Mobile: short labels */}
-      <span className={`badge-${event.category} sm:hidden text-[10px] font-semibold px-1.5 py-1 rounded-lg flex-shrink-0 shadow-sm border border-black/10 dark:border-white/10 whitespace-nowrap`}>
+      <span className={`badge-${event.category} sm:hidden text-[10px] font-semibold px-1.5 py-1 rounded-lg flex-shrink-0 shadow-sm border border-black/10 dark:border-white/10 whitespace-nowrap mt-0.5`}>
         {CATEGORY_LABELS_SHORT[event.category]}
       </span>
 
